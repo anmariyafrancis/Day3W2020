@@ -80,20 +80,45 @@ public class Array {
     {
         String fruits[];
         fruits = new String[10];
-        fruits[0]="Apple";
-        fruits[1]="Mango";
-        fruits[2]="Orange";
-        fruits[3]="Pineapple";
-        fruits[4]="Plum";
-        fruits[5]="Grapes";
-        fruits[6]="strawberry";
-        fruits[7]="Jackfruit";
-        fruits[8]="Banana";
-        fruits[9]="Rassberry";
 
-        for(int i=0;i<fruits.length;i++)
+        fruits[0] = "Apple";
+        fruits[1] = "Mango";
+        fruits[2] = "Orange";
+        fruits[3] = "Pineapple";
+        fruits[4] = "Plum";
+        fruits[5] = "Grapes";
+        fruits[6] = "strawberry";
+        fruits[7] = "Jackfruit";
+        fruits[8] = "Banana";
+        fruits[9] = "Rassberry";
+
+        for (int i = 0; i < fruits.length; i++)
         {
             System.out.println(fruits[i]);
         }
+        String reverseStrings[]=new String[fruits.length];
+        String[] rstr;
+        rstr=new String[10];
+        for(int i=0;i<fruits.length;i++)
+        {
+            String rev = reverseStrings(fruits[i]);
+            reverseStrings[i]=rev;
+            rstr[i]=rev;
+            System.out.println(new String(fruits[i])+"<->"+rev);
+        }
+    }
+   public static String reverseStrings(String s)
+    {
+        String temp=new String();
+        char names[]=s.toCharArray();
+        int len=names.length;
+        for(int i=0,j=len-1;i<len/2;i++,j--)
+        {
+            char t=names[i];
+            names[i]=names[j];
+            names[j]=t;
+        }
+        temp=new String(names);
+        return temp;
     }
 }
